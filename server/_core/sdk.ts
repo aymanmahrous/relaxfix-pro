@@ -287,7 +287,6 @@ class SDKServer {
           openId: userInfo.openId,
           name: userInfo.name || null,
           email: userInfo.email ?? null,
-          loginMethod: userInfo.loginMethod ?? userInfo.platform ?? null,
           lastSignedIn: signedInAt,
         });
         user = await db.getUserByOpenId(userInfo.openId);
@@ -327,8 +326,10 @@ function buildCronUser(
     openId: userInfo.openId,
     name: userInfo.name || "Manus Scheduled Task",
     email: null,
-    loginMethod: null,
-    role: "user",
+    phone: null,
+    profileImage: null,
+    role: "admin",
+    isActive: true,
     createdAt: now,
     updatedAt: now,
     lastSignedIn: now,
