@@ -32,7 +32,7 @@ export default function CustomerDashboard() {
     return (
       <DashboardLayout>
         <div className="flex items-center justify-center h-96">
-          <div className="text-gold-400">جاري التحميل...</div>
+          <div className="text-yellow-400">جاري التحميل...</div>
         </div>
       </DashboardLayout>
     );
@@ -83,7 +83,7 @@ export default function CustomerDashboard() {
             <p className="text-gray-400">إدارة طلبات الخدمة والتتبع الفوري</p>
           </div>
           <Button
-            className="bg-gradient-to-r from-gold-400 to-gold-600 text-black hover:from-gold-500 hover:to-gold-700"
+            className="bg-gradient-to-r from-yellow-400 to-yellow-600 text-black hover:from-yellow-500 hover:to-yellow-700"
             onClick={() => navigate("/customer/new-order")}
           >
             <Plus className="w-5 h-5 ml-2" />
@@ -116,17 +116,17 @@ export default function CustomerDashboard() {
               label: "النقاط المكتسبة",
               value: profile?.loyaltyPoints || 0,
               icon: "⭐",
-              color: "from-gold-500/20 to-gold-600/20",
+              color: "from-yellow-500/20 to-yellow-600/20",
             },
           ].map((stat, i) => (
             <Card
               key={i}
-              className="bg-gradient-to-br from-slate-800 to-slate-900 border-gold-500/20 p-6"
+              className="bg-gradient-to-br from-slate-800 to-slate-900 border-yellow-500/20 p-6"
             >
               <div className="flex items-center justify-between">
                 <div>
                   <p className="text-gray-400 text-sm mb-1">{stat.label}</p>
-                  <p className="text-3xl font-bold text-gold-400">
+                  <p className="text-3xl font-bold text-yellow-400">
                     {stat.value}
                   </p>
                 </div>
@@ -141,11 +141,11 @@ export default function CustomerDashboard() {
           <h2 className="text-2xl font-serif font-bold mb-6">طلباتي</h2>
 
           {orders.length === 0 ? (
-            <Card className="bg-gradient-to-br from-slate-800 to-slate-900 border-gold-500/20 p-12 text-center">
-              <AlertCircle className="w-12 h-12 text-gold-400 mx-auto mb-4" />
+            <Card className="bg-gradient-to-br from-slate-800 to-slate-900 border-yellow-500/20 p-12 text-center">
+              <AlertCircle className="w-12 h-12 text-yellow-400 mx-auto mb-4" />
               <p className="text-gray-300 mb-4">لا توجد طلبات حالياً</p>
               <Button
-                className="bg-gradient-to-r from-gold-400 to-gold-600 text-black"
+                className="bg-gradient-to-r from-yellow-400 to-yellow-600 text-black"
                 onClick={() => navigate("/customer/new-order")}
               >
                 طلب خدمة الآن
@@ -156,7 +156,7 @@ export default function CustomerDashboard() {
               {orders.map((order) => (
                 <Card
                   key={order.id}
-                  className="bg-gradient-to-br from-slate-800 to-slate-900 border-gold-500/20 p-6 hover:border-gold-500/50 transition cursor-pointer"
+                  className="bg-gradient-to-br from-slate-800 to-slate-900 border-yellow-500/20 p-6 hover:border-yellow-500/50 transition cursor-pointer"
                   onClick={() =>
                     setSelectedOrder(
                       selectedOrder === order.id ? null : order.id
@@ -194,7 +194,7 @@ export default function CustomerDashboard() {
                       </div>
                     </div>
                     <div className="text-right">
-                      <div className="text-2xl font-bold text-gold-400">
+                      <div className="text-2xl font-bold text-yellow-400">
                         {order.estimatedPrice || "قيد التقدير"} درهم
                       </div>
                       <div className="text-sm text-gray-400 mt-1">
@@ -205,11 +205,11 @@ export default function CustomerDashboard() {
 
                   {/* Expanded Details */}
                   {selectedOrder === order.id && (
-                    <div className="mt-6 pt-6 border-t border-gold-500/20 space-y-4">
+                    <div className="mt-6 pt-6 border-t border-yellow-500/20 space-y-4">
                       {/* Technician Info */}
                       {order.technicianId && (
                         <div className="bg-black/30 rounded-lg p-4">
-                          <h4 className="font-bold mb-3 text-gold-400">
+                          <h4 className="font-bold mb-3 text-yellow-400">
                             معلومات الفني
                           </h4>
                           <div className="flex items-center justify-between">
@@ -223,14 +223,14 @@ export default function CustomerDashboard() {
                               <Button
                                 size="sm"
                                 variant="outline"
-                                className="border-gold-400 text-gold-400"
+                                className="border-yellow-400 text-yellow-400"
                               >
                                 <Phone className="w-4 h-4" />
                               </Button>
                               <Button
                                 size="sm"
                                 variant="outline"
-                                className="border-gold-400 text-gold-400"
+                                className="border-yellow-400 text-yellow-400"
                               >
                                 <MessageSquare className="w-4 h-4" />
                               </Button>
@@ -242,11 +242,11 @@ export default function CustomerDashboard() {
                       {/* Live Tracking */}
                       {order.status === "in-progress" && (
                         <div className="bg-black/30 rounded-lg p-4">
-                          <h4 className="font-bold mb-3 text-gold-400">
+                          <h4 className="font-bold mb-3 text-yellow-400">
                             التتبع الفوري
                           </h4>
                           <div className="aspect-video bg-slate-700 rounded-lg flex items-center justify-center">
-                            <MapPin className="w-8 h-8 text-gold-400" />
+                            <MapPin className="w-8 h-8 text-yellow-400" />
                           </div>
                           <p className="text-sm text-gray-400 mt-2">
                             الفني في الطريق إليك - وقت الوصول: 15 دقيقة
@@ -256,7 +256,7 @@ export default function CustomerDashboard() {
 
                       {/* Timeline */}
                       <div className="bg-black/30 rounded-lg p-4">
-                        <h4 className="font-bold mb-3 text-gold-400">
+                        <h4 className="font-bold mb-3 text-yellow-400">
                           سجل الطلب
                         </h4>
                         <div className="space-y-2 text-sm">
@@ -285,7 +285,7 @@ export default function CustomerDashboard() {
                           <div className="flex gap-2">
                             <Button
                               variant="outline"
-                              className="flex-1 border-gold-400 text-gold-400"
+                              className="flex-1 border-yellow-400 text-yellow-400"
                             >
                               تعديل الطلب
                             </Button>
@@ -300,7 +300,7 @@ export default function CustomerDashboard() {
 
                       {order.status === "completed" && (
                         <Button
-                          className="w-full bg-gold-400 text-black hover:bg-gold-500"
+                          className="w-full bg-yellow-400 text-black hover:bg-yellow-500"
                           onClick={() => navigate(`/customer/review/${order.id}`)}
                         >
                           <Star className="w-4 h-4 ml-2" />

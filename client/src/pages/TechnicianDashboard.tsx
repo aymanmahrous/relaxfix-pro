@@ -47,7 +47,7 @@ export default function TechnicianDashboard() {
     return (
       <DashboardLayout>
         <div className="flex items-center justify-center h-96">
-          <div className="text-gold-400">جاري التحميل...</div>
+          <div className="text-yellow-400">جاري التحميل...</div>
         </div>
       </DashboardLayout>
     );
@@ -174,12 +174,12 @@ export default function TechnicianDashboard() {
           ].map((stat, i) => (
             <Card
               key={i}
-              className="bg-gradient-to-br from-slate-800 to-slate-900 border-gold-500/20 p-6"
+              className="bg-gradient-to-br from-slate-800 to-slate-900 border-yellow-500/20 p-6"
             >
               <div className="flex items-center justify-between">
                 <div>
                   <p className="text-gray-400 text-sm mb-1">{stat.label}</p>
-                  <p className="text-3xl font-bold text-gold-400">
+                  <p className="text-3xl font-bold text-yellow-400">
                     {stat.value}
                   </p>
                 </div>
@@ -194,8 +194,8 @@ export default function TechnicianDashboard() {
           <h2 className="text-2xl font-serif font-bold mb-6">الطلبات المتاحة</h2>
 
           {availableOrders.length === 0 ? (
-            <Card className="bg-gradient-to-br from-slate-800 to-slate-900 border-gold-500/20 p-12 text-center">
-              <AlertCircle className="w-12 h-12 text-gold-400 mx-auto mb-4" />
+            <Card className="bg-gradient-to-br from-slate-800 to-slate-900 border-yellow-500/20 p-12 text-center">
+              <AlertCircle className="w-12 h-12 text-yellow-400 mx-auto mb-4" />
               <p className="text-gray-300 mb-4">لا توجد طلبات متاحة حالياً</p>
               <p className="text-sm text-gray-500">
                 تحقق من الطلبات الجديدة كل بضع دقائق
@@ -206,7 +206,7 @@ export default function TechnicianDashboard() {
               {availableOrders.map((order) => (
                 <Card
                   key={order.id}
-                  className="bg-gradient-to-br from-slate-800 to-slate-900 border-gold-500/20 p-6 hover:border-gold-500/50 transition"
+                  className="bg-gradient-to-br from-slate-800 to-slate-900 border-yellow-500/20 p-6 hover:border-yellow-500/50 transition"
                 >
                   <div className="flex items-start justify-between mb-4">
                     <div className="flex-1">
@@ -233,11 +233,11 @@ export default function TechnicianDashboard() {
                       </div>
                     </div>
                     <div className="text-right">
-                      <div className="text-2xl font-bold text-gold-400 mb-2">
+                      <div className="text-2xl font-bold text-yellow-400 mb-2">
                         {order.estimatedPrice || "قيد التقدير"} درهم
                       </div>
                       <Button
-                        className="bg-gold-400 text-black hover:bg-gold-500"
+                        className="bg-yellow-400 text-black hover:bg-yellow-500"
                         onClick={() => handleAcceptOrder(order.id as any)}
                         disabled={acceptOrderMutation.isPending}
                       >
@@ -254,7 +254,7 @@ export default function TechnicianDashboard() {
                       <Navigation className="w-4 h-4" />
                       المسافة: 2.5 كم
                     </div>
-                    <div className="text-sm text-gold-400 font-semibold">
+                    <div className="text-sm text-yellow-400 font-semibold">
                       وقت الوصول: 8 دقائق
                     </div>
                   </div>
@@ -272,7 +272,7 @@ export default function TechnicianDashboard() {
               {(assignedOrders as any[]).map((order: any) => (
                 <Card
                   key={order.id}
-                  className="bg-gradient-to-br from-slate-800 to-slate-900 border-gold-500/20 p-6"
+                  className="bg-gradient-to-br from-slate-800 to-slate-900 border-yellow-500/20 p-6"
                 >
                   <div className="flex items-start justify-between mb-4">
                     <div>
@@ -291,21 +291,21 @@ export default function TechnicianDashboard() {
                       <Button
                         size="sm"
                         variant="outline"
-                        className="border-gold-400 text-gold-400"
+                        className="border-yellow-400 text-yellow-400"
                       >
                         <Phone className="w-4 h-4" />
                       </Button>
                       <Button
                         size="sm"
                         variant="outline"
-                        className="border-gold-400 text-gold-400"
+                        className="border-yellow-400 text-yellow-400"
                       >
                         <MessageSquare className="w-4 h-4" />
                       </Button>
                       <Button
                         size="sm"
                         variant="outline"
-                        className="border-gold-400 text-gold-400"
+                        className="border-yellow-400 text-yellow-400"
                       >
                         <Mic className="w-4 h-4" />
                       </Button>

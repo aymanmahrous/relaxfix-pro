@@ -32,7 +32,7 @@ export default function NewOrder() {
     return (
       <DashboardLayout>
         <div className="flex items-center justify-center h-96">
-          <div className="text-gold-400">جاري التحميل...</div>
+          <div className="text-yellow-400">جاري التحميل...</div>
         </div>
       </DashboardLayout>
     );
@@ -82,7 +82,7 @@ export default function NewOrder() {
             <div
               key={s}
               className={`flex-1 h-2 rounded-full transition ${
-                s <= step ? "bg-gold-400" : "bg-slate-700"
+                s <= step ? "bg-yellow-400" : "bg-slate-700"
               }`}
             />
           ))}
@@ -98,8 +98,8 @@ export default function NewOrder() {
                   key={service.id}
                   className={`bg-gradient-to-br from-slate-800 to-slate-900 border-2 p-6 cursor-pointer transition ${
                     selectedService === service.id
-                      ? "border-gold-400 bg-gold-400/5"
-                      : "border-gold-500/20 hover:border-gold-500/50"
+                      ? "border-yellow-400 bg-yellow-400/5"
+                      : "border-yellow-500/20 hover:border-yellow-500/50"
                   }`}
                   onClick={() => setSelectedService(service.id)}
                 >
@@ -108,14 +108,14 @@ export default function NewOrder() {
                   <p className="text-sm text-gray-400 mb-3">
                     {service.description}
                   </p>
-                  <p className="text-gold-400 font-semibold">
+                  <p className="text-yellow-400 font-semibold">
                     من {service.basePrice} درهم
                   </p>
                 </Card>
               ))}
             </div>
             <Button
-              className="w-full bg-gold-400 text-black hover:bg-gold-500"
+              className="w-full bg-yellow-400 text-black hover:bg-yellow-500"
               onClick={() => setStep(2)}
               disabled={!selectedService}
             >
@@ -134,8 +134,8 @@ export default function NewOrder() {
                   key={area.id}
                   className={`bg-gradient-to-br from-slate-800 to-slate-900 border-2 p-4 cursor-pointer transition ${
                     selectedArea === area.id
-                      ? "border-gold-400 bg-gold-400/5"
-                      : "border-gold-500/20 hover:border-gold-500/50"
+                      ? "border-yellow-400 bg-yellow-400/5"
+                      : "border-yellow-500/20 hover:border-yellow-500/50"
                   }`}
                   onClick={() => setSelectedArea(area.id)}
                 >
@@ -146,7 +146,7 @@ export default function NewOrder() {
                         نطاق الخدمة: {area.radius} كم
                       </p>
                     </div>
-                    <MapPin className="w-5 h-5 text-gold-400" />
+                    <MapPin className="w-5 h-5 text-yellow-400" />
                   </div>
                 </Card>
               ))}
@@ -154,13 +154,13 @@ export default function NewOrder() {
             <div className="flex gap-3">
               <Button
                 variant="outline"
-                className="flex-1 border-gold-400 text-gold-400"
+                className="flex-1 border-yellow-400 text-yellow-400"
                 onClick={() => setStep(1)}
               >
                 السابق
               </Button>
               <Button
-                className="flex-1 bg-gold-400 text-black hover:bg-gold-500"
+                className="flex-1 bg-yellow-400 text-black hover:bg-yellow-500"
                 onClick={() => setStep(3)}
                 disabled={!selectedArea}
               >
@@ -187,7 +187,7 @@ export default function NewOrder() {
                   type="datetime-local"
                   value={scheduledDate}
                   onChange={(e) => setScheduledDate(e.target.value)}
-                  className="bg-slate-800 border-gold-500/20"
+                  className="bg-slate-800 border-yellow-500/20"
                 />
               </div>
 
@@ -201,7 +201,7 @@ export default function NewOrder() {
                   placeholder="أدخل عنوان الخدمة"
                   value={address}
                   onChange={(e) => setAddress(e.target.value)}
-                  className="bg-slate-800 border-gold-500/20"
+                  className="bg-slate-800 border-yellow-500/20"
                 />
               </div>
 
@@ -209,9 +209,9 @@ export default function NewOrder() {
                 <label className="block text-sm font-semibold mb-2">
                   الموقع على الخريطة
                 </label>
-                <div className="bg-slate-800 border border-gold-500/20 rounded-lg h-64 flex items-center justify-center">
+                <div className="bg-slate-800 border border-yellow-500/20 rounded-lg h-64 flex items-center justify-center">
                   <div className="text-center">
-                    <MapPin className="w-8 h-8 text-gold-400 mx-auto mb-2" />
+                    <MapPin className="w-8 h-8 text-yellow-400 mx-auto mb-2" />
                     <p className="text-gray-400">انقر لتحديد الموقع</p>
                   </div>
                 </div>
@@ -221,13 +221,13 @@ export default function NewOrder() {
             <div className="flex gap-3">
               <Button
                 variant="outline"
-                className="flex-1 border-gold-400 text-gold-400"
+                className="flex-1 border-yellow-400 text-yellow-400"
                 onClick={() => setStep(2)}
               >
                 السابق
               </Button>
               <Button
-                className="flex-1 bg-gold-400 text-black hover:bg-gold-500"
+                className="flex-1 bg-yellow-400 text-black hover:bg-yellow-500"
                 onClick={() => setStep(4)}
                 disabled={!scheduledDate || !address}
               >
@@ -242,22 +242,22 @@ export default function NewOrder() {
           <div className="space-y-6">
             <h2 className="text-2xl font-serif font-bold">مراجعة الطلب</h2>
 
-            <Card className="bg-gradient-to-br from-slate-800 to-slate-900 border-gold-500/20 p-6 space-y-4">
-              <div className="flex justify-between pb-4 border-b border-gold-500/20">
+            <Card className="bg-gradient-to-br from-slate-800 to-slate-900 border-yellow-500/20 p-6 space-y-4">
+              <div className="flex justify-between pb-4 border-b border-yellow-500/20">
                 <span className="text-gray-400">الخدمة:</span>
                 <span className="font-semibold">
                   {services.find((s) => s.id === selectedService)?.name}
                 </span>
               </div>
 
-              <div className="flex justify-between pb-4 border-b border-gold-500/20">
+              <div className="flex justify-between pb-4 border-b border-yellow-500/20">
                 <span className="text-gray-400">المنطقة:</span>
                 <span className="font-semibold">
                   {areas.find((a) => a.id === selectedArea)?.name}
                 </span>
               </div>
 
-              <div className="flex justify-between pb-4 border-b border-gold-500/20">
+              <div className="flex justify-between pb-4 border-b border-yellow-500/20">
                 <span className="text-gray-400">الموعد:</span>
                 <span className="font-semibold">
                   {new Date(scheduledDate).toLocaleDateString("ar-AE")}
@@ -279,11 +279,11 @@ export default function NewOrder() {
                 placeholder="أضف أي ملاحظات أو تفاصيل إضافية..."
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
-                className="bg-slate-800 border-gold-500/20 h-24"
+                className="bg-slate-800 border-yellow-500/20 h-24"
               />
             </div>
 
-            <div className="bg-gold-400/10 border border-gold-500/30 rounded-lg p-4">
+            <div className="bg-yellow-400/10 border border-yellow-500/30 rounded-lg p-4">
               <p className="text-sm text-gray-300">
                 <strong>ملاحظة:</strong> سيتم عرض السعر النهائي بعد تقييم الفني
                 للخدمة المطلوبة.
@@ -293,13 +293,13 @@ export default function NewOrder() {
             <div className="flex gap-3">
               <Button
                 variant="outline"
-                className="flex-1 border-gold-400 text-gold-400"
+                className="flex-1 border-yellow-400 text-yellow-400"
                 onClick={() => setStep(3)}
               >
                 السابق
               </Button>
               <Button
-                className="flex-1 bg-gold-400 text-black hover:bg-gold-500"
+                className="flex-1 bg-yellow-400 text-black hover:bg-yellow-500"
                 onClick={handleCreateOrder}
                 disabled={createOrderMutation.isPending}
               >

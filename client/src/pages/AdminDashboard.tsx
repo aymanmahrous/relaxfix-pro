@@ -38,7 +38,7 @@ export default function AdminDashboard() {
     return (
       <DashboardLayout>
         <div className="flex items-center justify-center h-96">
-          <div className="text-gold-400">جاري التحميل...</div>
+          <div className="text-yellow-400">جاري التحميل...</div>
         </div>
       </DashboardLayout>
     );
@@ -63,7 +63,7 @@ export default function AdminDashboard() {
         </div>
 
         {/* Tabs */}
-        <div className="flex gap-4 border-b border-gold-500/20">
+        <div className="flex gap-4 border-b border-yellow-500/20">
           {[
             { id: "overview", label: "نظرة عامة", icon: "📊" },
             { id: "users", label: "المستخدمين", icon: "👥" },
@@ -75,7 +75,7 @@ export default function AdminDashboard() {
               onClick={() => setActiveTab(tab.id as any)}
               className={`px-4 py-3 font-semibold transition ${
                 activeTab === tab.id
-                  ? "text-gold-400 border-b-2 border-gold-400"
+                  ? "text-yellow-400 border-b-2 border-yellow-400"
                   : "text-gray-400 hover:text-gold-300"
               }`}
             >
@@ -119,18 +119,18 @@ export default function AdminDashboard() {
                 return (
                   <Card
                     key={i}
-                    className={`bg-gradient-to-br ${metric.color} border-gold-500/20 p-6`}
+                    className={`bg-gradient-to-br ${metric.color} border-yellow-500/20 p-6`}
                   >
                     <div className="flex items-center justify-between">
                       <div>
                         <p className="text-gray-400 text-sm mb-1">
                           {metric.label}
                         </p>
-                        <p className="text-3xl font-bold text-gold-400">
+                        <p className="text-3xl font-bold text-yellow-400">
                           {metric.value}
                         </p>
                       </div>
-                      <Icon className="w-8 h-8 text-gold-400 opacity-50" />
+                      <Icon className="w-8 h-8 text-yellow-400 opacity-50" />
                     </div>
                   </Card>
                 );
@@ -142,10 +142,10 @@ export default function AdminDashboard() {
               <h2 className="text-2xl font-serif font-bold mb-6">
                 الطلبات الأخيرة
               </h2>
-              <Card className="bg-gradient-to-br from-slate-800 to-slate-900 border-gold-500/20 overflow-hidden">
+              <Card className="bg-gradient-to-br from-slate-800 to-slate-900 border-yellow-500/20 overflow-hidden">
                 <div className="overflow-x-auto">
                   <table className="w-full">
-                    <thead className="bg-black/30 border-b border-gold-500/20">
+                    <thead className="bg-black/30 border-b border-yellow-500/20">
                       <tr>
                         <th className="px-6 py-3 text-right text-sm font-semibold">
                           رقم الطلب
@@ -168,7 +168,7 @@ export default function AdminDashboard() {
                       {(recentOrders as any[])?.map((order: any) => (
                         <tr
                           key={order.id}
-                          className="border-b border-gold-500/10 hover:bg-gold-500/5 transition"
+                          className="border-b border-yellow-500/10 hover:bg-yellow-500/5 transition"
                         >
                           <td className="px-6 py-3 text-sm">
                             #{order.orderNumber}
@@ -192,7 +192,7 @@ export default function AdminDashboard() {
                                 : "قيد التنفيذ"}
                             </span>
                           </td>
-                          <td className="px-6 py-3 text-sm text-gold-400 font-semibold">
+                          <td className="px-6 py-3 text-sm text-yellow-400 font-semibold">
                             {order.totalPrice} درهم
                           </td>
                         </tr>
@@ -210,15 +210,15 @@ export default function AdminDashboard() {
           <div className="space-y-6">
             <div className="flex justify-between items-center">
               <h2 className="text-2xl font-serif font-bold">إدارة المستخدمين</h2>
-              <Button className="bg-gold-400 text-black hover:bg-gold-500">
+              <Button className="bg-yellow-400 text-black hover:bg-yellow-500">
                 إضافة مستخدم
               </Button>
             </div>
 
-            <Card className="bg-gradient-to-br from-slate-800 to-slate-900 border-gold-500/20 overflow-hidden">
+            <Card className="bg-gradient-to-br from-slate-800 to-slate-900 border-yellow-500/20 overflow-hidden">
               <div className="overflow-x-auto">
                 <table className="w-full">
-                  <thead className="bg-black/30 border-b border-gold-500/20">
+                  <thead className="bg-black/30 border-b border-yellow-500/20">
                     <tr>
                       <th className="px-6 py-3 text-right text-sm font-semibold">
                         الاسم
@@ -241,7 +241,7 @@ export default function AdminDashboard() {
                     {[].map((u: any) => (
                       <tr
                         key={u.id}
-                        className="border-b border-gold-500/10 hover:bg-gold-500/5 transition"
+                        className="border-b border-yellow-500/10 hover:bg-yellow-500/5 transition"
                       >
                         <td className="px-6 py-3 text-sm">{u.name}</td>
                         <td className="px-6 py-3 text-sm text-gray-400">
@@ -279,7 +279,7 @@ export default function AdminDashboard() {
                           <Button
                             size="sm"
                             variant="outline"
-                            className="border-gold-400 text-gold-400"
+                            className="border-yellow-400 text-yellow-400"
                           >
                             تعديل
                           </Button>
@@ -298,7 +298,7 @@ export default function AdminDashboard() {
           <div className="space-y-6">
             <div className="flex justify-between items-center">
               <h2 className="text-2xl font-serif font-bold">إدارة الخدمات</h2>
-              <Button className="bg-gold-400 text-black hover:bg-gold-500">
+              <Button className="bg-yellow-400 text-black hover:bg-yellow-500">
                 إضافة خدمة
               </Button>
             </div>
@@ -307,7 +307,7 @@ export default function AdminDashboard() {
               {(services as any[])?.map((service: any) => (
                 <Card
                   key={service.id}
-                  className="bg-gradient-to-br from-slate-800 to-slate-900 border-gold-500/20 p-6"
+                  className="bg-gradient-to-br from-slate-800 to-slate-900 border-yellow-500/20 p-6"
                 >
                   <div className="flex items-start justify-between mb-4">
                     <div>
@@ -318,7 +318,7 @@ export default function AdminDashboard() {
                         {service.description}
                       </p>
                       <div className="flex items-center gap-4 text-sm">
-                        <span className="text-gold-400 font-semibold">
+                        <span className="text-yellow-400 font-semibold">
                           {service.basePrice} درهم
                         </span>
                         <span className="text-gray-400">
@@ -328,11 +328,11 @@ export default function AdminDashboard() {
                     </div>
                   </div>
 
-                  <div className="flex gap-2 pt-4 border-t border-gold-500/20">
+                  <div className="flex gap-2 pt-4 border-t border-yellow-500/20">
                     <Button
                       size="sm"
                       variant="outline"
-                      className="flex-1 border-gold-400 text-gold-400"
+                      className="flex-1 border-yellow-400 text-yellow-400"
                     >
                       تعديل
                     </Button>
@@ -357,9 +357,9 @@ export default function AdminDashboard() {
 
             <div className="grid md:grid-cols-2 gap-6">
               {/* Revenue Chart */}
-              <Card className="bg-gradient-to-br from-slate-800 to-slate-900 border-gold-500/20 p-6">
+              <Card className="bg-gradient-to-br from-slate-800 to-slate-900 border-yellow-500/20 p-6">
                 <h3 className="text-lg font-bold mb-4 flex items-center gap-2">
-                  <BarChart3 className="w-5 h-5 text-gold-400" />
+                  <BarChart3 className="w-5 h-5 text-yellow-400" />
                   الإيرادات الشهرية
                 </h3>
                 <div className="h-64 bg-black/30 rounded-lg flex items-center justify-center">
@@ -368,9 +368,9 @@ export default function AdminDashboard() {
               </Card>
 
               {/* Orders Distribution */}
-              <Card className="bg-gradient-to-br from-slate-800 to-slate-900 border-gold-500/20 p-6">
+              <Card className="bg-gradient-to-br from-slate-800 to-slate-900 border-yellow-500/20 p-6">
                 <h3 className="text-lg font-bold mb-4 flex items-center gap-2">
-                  <TrendingUp className="w-5 h-5 text-gold-400" />
+                  <TrendingUp className="w-5 h-5 text-yellow-400" />
                   توزيع الطلبات
                 </h3>
                 <div className="h-64 bg-black/30 rounded-lg flex items-center justify-center">
@@ -379,9 +379,9 @@ export default function AdminDashboard() {
               </Card>
 
               {/* Geographic Distribution */}
-              <Card className="bg-gradient-to-br from-slate-800 to-slate-900 border-gold-500/20 p-6 md:col-span-2">
+              <Card className="bg-gradient-to-br from-slate-800 to-slate-900 border-yellow-500/20 p-6 md:col-span-2">
                 <h3 className="text-lg font-bold mb-4 flex items-center gap-2">
-                  <MapPin className="w-5 h-5 text-gold-400" />
+                  <MapPin className="w-5 h-5 text-yellow-400" />
                   التوزيع الجغرافي
                 </h3>
                 <div className="h-96 bg-black/30 rounded-lg flex items-center justify-center">
