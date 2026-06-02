@@ -4,6 +4,8 @@ import NotFound from "@/pages/NotFound";
 import Home from "@/pages/Home";
 import CustomerDashboard from "@/pages/CustomerDashboard";
 import NewOrder from "@/pages/NewOrder";
+import TechnicianDashboard from "@/pages/TechnicianDashboard";
+import AdminDashboard from "@/pages/AdminDashboard";
 import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
@@ -14,6 +16,8 @@ function Router() {
       <Route path={"/"} component={Home} />
       <Route path={"/customer/dashboard"} component={CustomerDashboard} />
       <Route path={"/customer/new-order"} component={NewOrder} />
+      <Route path={"/technician/dashboard"} component={TechnicianDashboard} />
+      <Route path={"/admin/dashboard"} component={AdminDashboard} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />
